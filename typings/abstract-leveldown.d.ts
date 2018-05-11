@@ -74,8 +74,8 @@ declare module "abstract-leveldown" {
     put(key: K, value: V): this;
     del(key: K): this;
     clear(): this;
-    write(cb: any): any
-    write(options: any, cb: any): any
+    write(cb: ErrorCallback): any
+    write(options: any, cb: ErrorCallback): any
   }
 
   interface AbstractChainedBatchConstructor {
@@ -85,8 +85,8 @@ declare module "abstract-leveldown" {
 
   export interface AbstractIterator<K=any, V=any> extends AbstractChainedBatchConstructor {
     db: AbstractLevelDOWN;
-    next(cb: (err: Error, key: K, value: V) => void): this;
-    end(cb: (err: Error) => void): void;
+    next(cb: ErrorKeyValueCallback<K, V>): this;
+    end(cb: ErrorCallback): void;
   }
 
   interface AbstractIteratorConstructor {
