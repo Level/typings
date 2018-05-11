@@ -1,2 +1,2 @@
 # level-typings
-development of typings for Level repositories
+experimental development of typings for Level repositories. 

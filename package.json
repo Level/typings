@@ -1,20 +1,21 @@
 {
   "name": "level-typings",
-  "version": "1.0.0",
-  "description": "typings for level repositories",
+  "version": "0.1.0",
+  "description": "experimental typings for level repositories",
   "main": "index.js",
   "typings": "index.d.ts",
-  "repository": "https://github.com/MeirionHughes/level-typings",
-  "author": "Meirion Hughes <mhughes@geologging.com>",
+  "repository": "https://github.com/Level/level-typings",
+  "author": "Meirion Hughes <crakinshot@yahoo.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.1.3",
     "@types/mocha": "^5.2.0",
     "@types/node": "^10.0.8",
     "abstract-leveldown": "Level/abstract-leveldown#notypes",
-    "chai": "^4.1.2",
+    "chai": "^4.1.2",    
     "encoding-down": "Level/encoding-down#notypes",
     "leveldown": "Level/leveldown#notypes",
+    "level-codec": "^8.0.0",
     "mocha": "^5.1.1",
     "nyc": "^11.7.3",
     "rimraf": "^2.6.2",
@@ -43,8 +44,5 @@
     ],
     "sourceMap": true,
     "instrument": true
-  },
-  "dependencies": {
-    "level-codec": "^8.0.0"
   }
 }
