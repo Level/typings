@@ -1,0 +1,50 @@
+{
+  "name": "level-typings",
+  "version": "1.0.0",
+  "description": "typings for level repositories",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "repository": "https://github.com/MeirionHughes/level-typings",
+  "author": "Meirion Hughes <mhughes@geologging.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^10.0.8",
+    "abstract-leveldown": "Level/abstract-leveldown#notypes",
+    "chai": "^4.1.2",
+    "encoding-down": "Level/encoding-down#notypes",
+    "leveldown": "Level/leveldown#notypes",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.3",
+    "rimraf": "^2.6.2",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
+  },
+  "scripts": {
+    "test": "nyc node_modules/mocha/bin/mocha --harmony tests/*.ts && rimraf ./tmp"
+  },
+  "nyc": {
+    "exclude": [
+      "node_modules/",
+      "tests/"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register",
+      "source-map-support/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html",
+      "lcov"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "dependencies": {
+    "level-codec": "^8.0.0"
+  }
+}
