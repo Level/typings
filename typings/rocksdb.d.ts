@@ -80,6 +80,6 @@ declare module "rocksdb" {
     fastFuture: any;
   }
 
-  export const RocksDB: RocksDBConstructor;
+  const RocksDB: RocksDBConstructor;
   export default RocksDB;
 }
