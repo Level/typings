@@ -1,13 +1,13 @@
-import LevelDOWN from 'leveldown';
+import * as RocksDB from 'rocksdb';
 
 describe("LevelDOWN", () => {
   it("creation", () => {
-    let a = new LevelDOWN("./tmp/leveldown");
-    let b = LevelDOWN("./tmp/leveldown");
+    let a = new RocksDB("./tmp/rocksdb");
+    let b = RocksDB("./tmp/rocksdb");
   });
 
   it("methods", (done) => {
-    let down = new LevelDOWN("./tmp/leveldown");
+    let down = new RocksDB("./tmp/rocksdb");
 
     down.open(()=>{
       down.put("key", "value", (err?) => { });

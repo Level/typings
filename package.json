@@ -12,18 +12,20 @@
     "@types/mocha": "^5.2.0",
     "@types/node": "^10.0.8",
     "abstract-leveldown": "Level/abstract-leveldown#notypes",
-    "chai": "^4.1.2",    
+    "chai": "^4.1.2",
     "encoding-down": "Level/encoding-down#notypes",
-    "leveldown": "Level/leveldown#notypes",
     "level-codec": "^8.0.0",
+    "leveldown": "Level/leveldown#notypes",
+    "memdown": "Level/memdown#notypes",
     "mocha": "^5.1.1",
     "nyc": "^11.7.3",
     "rimraf": "^2.6.2",
+    "rocksdb": "Level/rocksdb#notypes",
     "ts-node": "^6.0.3",
     "typescript": "^2.8.3"
   },
   "scripts": {
-    "test": "nyc node_modules/mocha/bin/mocha --harmony tests/*.ts && rimraf ./tmp"
+    "test": "nyc node_modules/mocha/bin/mocha --harmony tests/*.ts && rimraf ./tmp/**/* ./tmp"
   },
   "nyc": {
     "exclude": [

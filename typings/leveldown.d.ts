@@ -18,7 +18,7 @@ declare module "leveldown" {
   export type Bytes = string | Buffer;
   export type ErrorSizeCallback = (err: Error | undefined, size: number) => void;
 
-  export interface LevelDown extends LevelDownConstructor, AbstractLevelDOWN<Bytes, Bytes> {
+  export interface LevelDown extends AbstractLevelDOWN<Bytes, Bytes> {
     open(cb: ErrorCallback): void;
     open(options: LevelDownOpenOptions, cb: ErrorCallback): void;
 
@@ -32,8 +32,8 @@ declare module "leveldown" {
     del(key: Bytes, options: LevelDownDelOptions, cb: ErrorCallback): void;
 
     batch(): AbstractChainedBatch<Bytes, Bytes>;
-    batch(array: LevelDownBatch[], cb: ErrorCallback): AbstractChainedBatch<Bytes, Bytes>;
-    batch(array: LevelDownBatch[], options: LevelDownBatchOptions, cb: ErrorCallback): AbstractChainedBatch<Bytes, Bytes>;
+    batch(array: AbstractBatch[], cb: ErrorCallback): AbstractChainedBatch<Bytes, Bytes>;
+    batch(array: AbstractBatch[], options: LevelDownBatchOptions, cb: ErrorCallback): AbstractChainedBatch<Bytes, Bytes>;
 
     approximateSize(start: Bytes, end: Bytes, cb: ErrorSizeCallback): void;
     compactRange(start: Bytes, end: Bytes, cb: ErrorCallback): void;
@@ -60,7 +60,6 @@ declare module "leveldown" {
 
   export interface LevelDownGetOptions extends AbstractGetOptions {
     fillCache?: boolean;
-    asBuffer?: boolean;
   }
 
   export interface LevelDownPutOptions extends AbstractPutOptions {
@@ -73,14 +72,10 @@ declare module "leveldown" {
 
   export interface LevelDownBatchOptions extends AbstractBatchOptions {
     sync?: boolean;
-  } 
-  
-  export type LevelDownBatch = AbstractBatch<Bytes, Bytes>
+  }  
 
   export interface LevelDownIteratorOptions extends AbstractIteratorOptions<Bytes> {
     fillCache?: boolean;
-    keyAsBuffer?: boolean;
-    valueAsBuffer?: boolean;
   }
 
   export interface LevelDownIterator extends AbstractIterator<Bytes, Bytes> {

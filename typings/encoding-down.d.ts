@@ -48,8 +48,8 @@ declare module "encoding-down"
   }
 
   interface EncodingDOWNConstructor {
-    <K=any, V=any>(db: AbstractLevelDOWN, options?: CodecOptions): EncodingDown<K, V>
-    new <K=any, V=any>(db: AbstractLevelDOWN, options?: CodecOptions): EncodingDown<K, V>
+    (db: AbstractLevelDOWN, options?: CodecOptions): EncodingDown
+    new (db: AbstractLevelDOWN, options?: CodecOptions): EncodingDown
   }
 
   const EncodingDOWN: EncodingDOWNConstructor;

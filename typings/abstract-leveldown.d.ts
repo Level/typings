@@ -55,6 +55,8 @@ declare module "abstract-leveldown" {
     limit?: number;
     keys?: boolean;
     values?: boolean;
+    keyAsBuffer?: boolean;
+    valueAsBuffer?: boolean;
   }
 
   export type AbstractBatch<K=any, V=any> = PutBatch<K, V> | DelBatch<K>
