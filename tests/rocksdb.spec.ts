@@ -1,6 +1,6 @@
-import * as RocksDB from 'rocksdb';
+import RocksDB from 'rocksdb';
 
-describe("LevelDOWN", () => {
+describe("RocksDB", () => {
   it("creation", () => {
     let a = new RocksDB("./tmp/rocksdb");
     let b = RocksDB("./tmp/rocksdb");

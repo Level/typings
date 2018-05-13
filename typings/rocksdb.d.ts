@@ -15,10 +15,10 @@ declare module "rocksdb" {
     AbstractBatch
   } from 'abstract-leveldown';
 
-  type Bytes = string | Buffer;
-  type ErrorSizeCallback = (err: Error | undefined, size: number) => void;
+  export type Bytes = string | Buffer;
+  export type ErrorSizeCallback = (err: Error | undefined, size: number) => void;
 
-  interface RocksDB extends AbstractLevelDOWN<Bytes, Bytes> {
+  export interface RocksDB extends AbstractLevelDOWN<Bytes, Bytes> {
     open(cb: ErrorCallback): void;
     open(options: RocksDBOpenOptions, cb: ErrorCallback): void;
 
@@ -48,30 +48,31 @@ declare module "rocksdb" {
     (location: string): RocksDB
   }
 
-  interface RocksDBOpenOptions extends AbstractOpenOptions {
+  export interface RocksDBOpenOptions extends AbstractOpenOptions {
+
   }
 
-  interface RocksDBGetOptions extends AbstractGetOptions {
+  export interface RocksDBGetOptions extends AbstractGetOptions {
     fillCache?: boolean;
   }
 
-  interface RocksDBPutOptions extends AbstractPutOptions {
+  export interface RocksDBPutOptions extends AbstractPutOptions {
     sync?: boolean
   }
 
-  interface RocksDBDelOptions extends AbstractDelOptions {
+  export interface RocksDBDelOptions extends AbstractDelOptions {
     sync?: boolean;
   }
 
-  interface RocksDBBatchOptions extends AbstractBatchOptions {
+  export interface RocksDBBatchOptions extends AbstractBatchOptions {
     sync?: boolean;
   }  
 
-  interface RocksDBIteratorOptions extends AbstractIteratorOptions<Bytes> {
+  export interface RocksDBIteratorOptions extends AbstractIteratorOptions<Bytes> {
     fillCache?: boolean;
   }
 
-  interface RocksDBIterator extends AbstractIterator<Bytes, Bytes> {
+  export interface RocksDBIterator extends AbstractIterator<Bytes, Bytes> {
     seek(key: Bytes): void;
     binding: any;
     cache: any;
@@ -79,6 +80,6 @@ declare module "rocksdb" {
     fastFuture: any;
   }
 
-  const RocksDB: RocksDBConstructor;
-  export = RocksDB;
+  export const RocksDB: RocksDBConstructor;
+  export default RocksDB;
 }
