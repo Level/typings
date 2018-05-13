@@ -86,6 +86,6 @@ declare module "leveldown" {
     fastFuture: any;
   }
 
-  export const LevelDOWN: LevelDownConstructor;
+  const LevelDOWN: LevelDownConstructor;
   export default LevelDOWN;
 }
